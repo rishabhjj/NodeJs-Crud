@@ -1,8 +1,8 @@
 import express from 'express'
-import { getPaceProjects, createPaceProjects} from '../routes/paceProjects'
+import { getPaceProjects, createPaceProjects, updatePaceProject, removeProject } from '../routes/paceProjects'
 
 let routes = function (PaceProject) {
-    try {
+  try {
         let router = express.Router()
 
         router.route('/')
@@ -12,6 +12,14 @@ let routes = function (PaceProject) {
         .post(function (req, res) {
           createPaceProjects(PaceProject, req, res)
         })
+        
+    router.route('/:id')
+    .patch(function (req, res) {
+        updatePaceProject(PaceProject, req, res)
+    })
+    .delete(function (req, res) {
+        removeProject(PaceProject, req, res)
+    })
         return router
     } catch (err) {
         console.log(err)

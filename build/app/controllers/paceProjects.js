@@ -17,6 +17,12 @@ var routes = function routes(PaceProject) {
         }).post(function (req, res) {
             (0, _paceProjects.createPaceProjects)(PaceProject, req, res);
         });
+
+        router.route('/:id').patch(function (req, res) {
+            (0, _paceProjects.updatePaceProject)(PaceProject, req, res);
+        }).delete(function (req, res) {
+            (0, _paceProjects.removeProject)(PaceProject, req, res);
+        });
         return router;
     } catch (err) {
         console.log(err);
