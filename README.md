@@ -10,7 +10,9 @@ To Use this Project:
 End Points :
 
 GET: /api/paceprojects
+
 DELETE: /api/paceprojects/:id (id denotes the mongo id for the record to be deleted)
+
 POST: /api/paceprojects
 
 Body :
@@ -23,6 +25,7 @@ Headers:
 {
 Accept:application/json
 }
+
 
 PATCH: /api/paceprojects/:id
 
